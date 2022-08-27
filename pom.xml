@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.voomdoon</groupId>
+		<artifactId>vd-parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath />
+	</parent>
+
+	<groupId>de.voomdoon.tool</groupId>
+	<artifactId>vd-tool-parent</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<build>
+		<finalName>${project.name}</finalName>
+
+		<plugins>
+			<!-- + + + + + building + + + + + -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>${toolMainClass}</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<appendAssemblyId>false</appendAssemblyId>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
+				<configuration>
+					<skipSource>true</skipSource>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- + + + + + compile dependencies + + + + + -->
+		<!-- internal voomdoon dependencies -->
+		<dependency>
+			<groupId>de.voomdoon.util</groupId>
+			<artifactId>vd-cli-util</artifactId>
+			<version>[0.1.0-SNAPSHOT],[0.1.0,0.1.99]</version>
+		</dependency>
+		<dependency>
+			<groupId>de.voomdoon.logging</groupId>
+			<artifactId>vd-log4j2-logging-connector</artifactId>
+			<version>[0.1.0-SNAPSHOT],[0.1.0,0.1.99]</version>
+		</dependency>
+		<!-- external dependencies -->
+		<!-- - - - - - compile dependencies - - - - - -->
+
+		<!-- + + + + + test dependencies + + + + + -->
+		<dependency>
+			<groupId>de.voomdoon.util.test</groupId>
+			<artifactId>vd-test-util</artifactId>
+			<version>[0.1.0-SNAPSHOT],[0.1.0,0.1.99]</version>
+		</dependency>
+		<!-- external test dependencies -->
+		<!-- - - - - - test dependencies - - - - - -->
+	</dependencies>
+</project>
