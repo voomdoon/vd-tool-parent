@@ -55,30 +55,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<dependencies>
-		<!-- + + + + + compile dependencies + + + + + -->
-		<!-- internal voomdoon dependencies -->
-		<dependency>
-			<groupId>de.voomdoon.util</groupId>
-			<artifactId>vd-cli-util</artifactId>
-			<version>[0.1.0-SNAPSHOT],[0.1.0,0.1.99]</version>
-		</dependency>
-		<dependency>
-			<groupId>de.voomdoon.logging</groupId>
-			<artifactId>vd-log4j2-logging-connector</artifactId>
-			<version>[0.1.0-SNAPSHOT],[0.1.0,0.1.99]</version>
-		</dependency>
-		<!-- external dependencies -->
-		<!-- - - - - - compile dependencies - - - - - -->
-
-		<!-- + + + + + test dependencies + + + + + -->
-		<dependency>
-			<groupId>de.voomdoon.util.test</groupId>
-			<artifactId>vd-test-util</artifactId>
-			<version>[0.1.0-SNAPSHOT],[0.1.0,0.1.99]</version>
-		</dependency>
-		<!-- external test dependencies -->
-		<!-- - - - - - test dependencies - - - - - -->
-	</dependencies>
 </project>
