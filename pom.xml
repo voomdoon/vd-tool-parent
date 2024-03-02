@@ -21,7 +21,7 @@
 			<!-- + + + + + building + + + + + -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.4.1</version>
+				<version>3.6.0</version>
 				<configuration>
 					<archive>
 						<manifest>
